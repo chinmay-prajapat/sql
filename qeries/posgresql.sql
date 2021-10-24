@@ -24,5 +24,9 @@ select customer_id,sum(amount) from payment group by customer_id having sum(amou
 select rating,round(avg(replacement_cost)) from film group by rating
 select customer_id,sum(amount) from payment group by customer_id order by sum(amount) desc limit 5
 select customer_id,count(amount) from payment group by customer_id having count(amount)>=40
+select contents,username FROM COMMENTS JOIN users on users.id=comments.id
+select contents,url FROM COMMENTS JOIN photos on photos.id=comments.photo_id
+select url,username FROM photos JOIN users on users.id=photos.user_id
 
 select name from students where marks>75 order by substring(name,-3), id asc
+select ceil(avg(salary)-avg(replace(salary,'0',''))) from employees
