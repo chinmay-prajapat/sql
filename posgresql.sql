@@ -31,3 +31,5 @@ select name from students where marks>75 order by substring(name,-3), id asc
 select ceil(avg(salary)-avg(replace(salary,'0',''))) from employees
 select url,username FROM photos FULL JOIN users on users.id=photos.user_id or photos.user_id=null;
 select url,contents,username FROM COMMENTS INNER JOIN photos on photos.id=COMMENTS.photo_id JOIN users on users.id=comments.user_id AND users.id=photos.user_id
+SELECT name,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
+SELECT username,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
