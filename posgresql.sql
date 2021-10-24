@@ -29,3 +29,4 @@ select contents,url FROM COMMENTS JOIN photos on photos.id=comments.photo_id
 select url,username FROM photos JOIN users on users.id=photos.user_id
 select name from students where marks>75 order by substring(name,-3), id asc
 select ceil(avg(salary)-avg(replace(salary,'0',''))) from employees
+select url,username FROM photos FULL JOIN users on users.id=photos.user_id or photos.user_id=null;
