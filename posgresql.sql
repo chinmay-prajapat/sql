@@ -30,3 +30,4 @@ select url,username FROM photos JOIN users on users.id=photos.user_id
 select name from students where marks>75 order by substring(name,-3), id asc
 select ceil(avg(salary)-avg(replace(salary,'0',''))) from employees
 select url,username FROM photos FULL JOIN users on users.id=photos.user_id or photos.user_id=null;
+select url,contents,username FROM COMMENTS INNER JOIN photos on photos.id=COMMENTS.photo_id JOIN users on users.id=comments.user_id AND users.id=photos.user_id
