@@ -33,3 +33,4 @@ select url,username FROM photos FULL JOIN users on users.id=photos.user_id or ph
 select url,contents,username FROM COMMENTS INNER JOIN photos on photos.id=COMMENTS.photo_id JOIN users on users.id=comments.user_id AND users.id=photos.user_id
 SELECT name,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
 SELECT username,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
+select name,count(*) from books join authors on authors.id=books.author_id group by name
