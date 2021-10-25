@@ -34,3 +34,5 @@ select url,contents,username FROM COMMENTS INNER JOIN photos on photos.id=COMMEN
 SELECT name,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
 SELECT username,title,rating FROM books JOIN authors on authors.id=books.author_id JOIN reviews on reviews.id=authors.id AND reviews.id=books.author_id WHERE books.author_id=reviews.book_id
 select name,count(*) from books join authors on authors.id=books.author_id group by name
+select photo_id,COUNT(*) FROM COMMENTS GROUP BY photo_id HAVING photo_id<3 AND count(*)>2
+select photo_id,COUNT(*) FROM COMMENTS WHERE photo_id<3  GROUP BY photo_id HAVING count(*)>2
