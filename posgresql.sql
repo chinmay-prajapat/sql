@@ -37,7 +37,7 @@ select name,count(*) from books join authors on authors.id=books.author_id group
 select photo_id,COUNT(*) FROM COMMENTS GROUP BY photo_id HAVING photo_id<3 AND count(*)>2
 select photo_id,COUNT(*) FROM COMMENTS WHERE photo_id<3  GROUP BY photo_id HAVING count(*)>2
 select manufacturer from phones where price<170 union select manufacturer from phones group by manufacturer having count(*)>2
-
+select username,caption from users join posts on posts.user_id=users.id where users.id=200
 					--subqueries
 
 SELECT name,price FROM products WHERE price>(SELECT max(price)FROM products WHERE department='Toys')	
