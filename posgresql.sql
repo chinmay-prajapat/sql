@@ -38,7 +38,8 @@ select photo_id,COUNT(*) FROM COMMENTS GROUP BY photo_id HAVING photo_id<3 AND c
 select photo_id,COUNT(*) FROM COMMENTS WHERE photo_id<3  GROUP BY photo_id HAVING count(*)>2
 select manufacturer from phones where price<170 union select manufacturer from phones group by manufacturer having count(*)>2
 select username,caption from users join posts on posts.user_id=users.id where users.id=200
-					--subqueries
+select username,count(likes.user_id) from users join likes on likes.user_id=users.id group by username
+--subqueries
 
 SELECT name,price FROM products WHERE price>(SELECT max(price)FROM products WHERE department='Toys')	
 SELECT name,price,(SELECT MAX(price) FROM products)FROM products WHERE price>876-- single value returned
